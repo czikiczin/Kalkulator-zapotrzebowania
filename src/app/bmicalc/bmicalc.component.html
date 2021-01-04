@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-xs-12 col-md-6 col-md-offset-3">
+    <div class="calculator"
+         *ngIf="!view">
+      <h3><strong>Oblicz swój wskaźnik BMI</strong></h3>
+      <div class="rowINcalc" style="margin-top: 50px">
+        <div class="left-input">
+          <span class="input-label">Płeć:</span>
+        </div>
+        <div class="right-input">
+          <select  class="right-input-style" id="select" name="select" [(ngModel)]="gender">
+            <option value="0">Mężczyzna</option>
+            <option value="1">Kobieta</option>
+          </select>
+        </div>
+      </div>
+      <div class="rowINcalc">
+        <div class="left-input">
+          <span class="input-label">Waga:</span>
+        </div>
+        <div class="right-input">
+          <input class="right-input-style"type="number" [(ngModel)]="weight" min="1" >
+          <span class="label-" style="display: inline-block; margin-left: 13px;float: left; font-size: 20px">kg</span>
+        </div>
+      </div>
+      <div class="rowINcalc">
+        <div class="left-input">
+          <span class="input-label">Wzrost:</span>
+        </div>
+        <div class="right-input">
+          <input class="right-input-style"type="number" [(ngModel)]="length" min="1" >
+          <span class="label-" style="display: inline-block; margin-left: 13px;float: left; font-size: 20px">cm</span>
+        </div>
+      </div>
+      <div class="btn-group">
+        <button class="btn btn-success" style="font-size: 30px; width: 300px; margin-bottom: 20px; margin-top: 30px"
+                (click)="OnClick()">
+          Oblicz</button>
+      </div>
+    </div>
+
+    <div class="calculator"
+         *ngIf="view"
+         style="-webkit-animation: spin 10s linear infinite; animation: spin 10s linear infinite">
+      <h3 style="margin: 20px"><strong>Twoje BMI wynosi:</strong></h3>
+      <span style="font-size: 40px; display: block; margin-bottom: 40px; margin-top: 50px">{{BMI}}</span>
+      <button class="btn btn-success"
+              (click)="onClear()"
+              style="font-size: 30px; width: 300px; margin-bottom: 20px; margin-top: 30px">Oblicz Ponownie</button>
+    </div>
+  </div>
+</div>
