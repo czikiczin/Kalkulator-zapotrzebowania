@@ -46,7 +46,7 @@
         </div>
         <div class="right-input">
           <select  class="right-input-style" [(ngModel)]="activity">
-            <option value="1">Brak</option>
+            <option value="1.15">Brak</option>
             <option value="1.3">Mała (ćwiczenia 1-3 tygodniowo, praca siedząca)</option>
             <option value="1.6">Srednia (ćwiczenia 3-5 tygodniowo, lekka praca fizyczna)</option>
             <option value="1.8">Duża (ćwiczenia codziennie, praca fizyczna)</option>
@@ -64,8 +64,10 @@
     <div class="calculator"
     *ngIf="view"
     style="-webkit-animation: spin 10s linear infinite; animation: spin 10s linear infinite">
-      <h3 style="margin: 20px"><strong>Twoje zapotrzebowanie kaloryczne wynosi:</strong></h3>
+      <h3 style="margin: 20px"><strong>Twoje podstawowa przemiana materii wynosi:</strong></h3>
       <span style="font-size: 40px; display: block; margin-bottom: 40px; margin-top: 50px">{{BMR}}  kcal</span>
+      <h3 style="margin: 20px"><strong>Twoje zapotrzebowanie uwzględniając aktywność:</strong></h3>
+      <span style="font-size: 40px; display: block; margin-bottom: 40px; margin-top: 50px">{{BMRact}}  kcal</span>
       <button class="btn btn-success"
               (click)="onClear()"
       style="font-size: 30px; width: 300px; margin-bottom: 20px; margin-top: 30px">Oblicz Ponownie</button>
