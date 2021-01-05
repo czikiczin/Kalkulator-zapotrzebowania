@@ -44,9 +44,40 @@
          style="-webkit-animation: spin 10s linear infinite; animation: spin 10s linear infinite">
       <h3 style="margin: 20px"><strong>Twoje BMI wynosi:</strong></h3>
       <span style="font-size: 40px; display: block; margin-bottom: 40px; margin-top: 50px">{{BMI}}</span>
+      <p style="font-size: 20px; color: green"
+      *ngIf="BMItext === 'wartość prawidłową'" ><span style="color: black">Oznacza to </span> {{ BMItext }}</p>
+      <p style="font-size: 20px; color: red"
+         *ngIf="BMItext !== 'wartość prawidłową'" ><span style="color: black">Oznacza to </span> {{ BMItext }}</p>
       <button class="btn btn-success"
               (click)="onClear()"
               style="font-size: 30px; width: 300px; margin-bottom: 20px; margin-top: 30px">Oblicz Ponownie</button>
+    </div>
+  </div>
+</div>
+
+<div class="row" style="margin-bottom: 40px">
+  <div class="col-xs-12 col-md-6">
+    <div class="calculator">
+      <h3 style="margin-bottom: 20px"><strong>Do czego służy kalkulator BMI ?</strong></h3>
+      <p style="text-align: left; margin: 10px; text-align: justify">
+        Kalkulator kalorii umożliwia szybkie i wygodne wyliczenie własnego dziennego zapotrzebowania na
+        kalorie oraz poznanie wskaźnika BMR. Wskaźnik podstawowej przemiany materii (Basal Metabolic Rate, BMR)
+        jest minimalnym dziennym zapotrzebowaniem energetycznym koniecznym do podtrzymania podstawowych procesów
+        życiowych ciała w spoczynku.
+      </p>
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-6">
+    <div class="calculator" style="min-height: 186.36px">
+      <h3 style="margin-bottom: 20px"><strong>Zakresy wartości BMI</strong></h3>
+      <p class="BMIvalue">< 16 - wygłodzenie</p>
+      <p class="BMIvalue">16 - 16.99 - wychudzenie</p>
+      <p class="BMIvalue">17 - 18.49 - niedowaga</p>
+      <p class="BMIvalue">18.5 - 24.99 - wartość prawidłowa</p>
+      <p class="BMIvalue">25 - 29.99 - nadwaga</p>
+      <p class="BMIvalue">30 - 34.99 - I stopień otyłości</p>
+      <p class="BMIvalue">35 - 39.99 - II stopień otyłości</p>
+      <p class="BMIvalue">> 40 - otyłość skrajna</p>
     </div>
   </div>
 </div>
