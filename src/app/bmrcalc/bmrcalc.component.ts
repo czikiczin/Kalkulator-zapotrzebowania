@@ -15,6 +15,7 @@ export class BMRcalcComponent implements OnInit {
   length;
   activity;
   BMR;
+  BMRact;
   constructor() { }
 
   ngOnInit(): void {
@@ -26,8 +27,10 @@ export class BMRcalcComponent implements OnInit {
     /*this.activity = this.activity.toNumber(this.activity);*/
     if (this.gender === '0')
     {
-      this.BMR = ( 66 + (13.7 * this.weight) + (5 * this.length) - (6.76 * this.age)) * this.activity;
+      this.BMR = 66 + (13.7 * this.weight) + (5 * this.length) - (6.76 * this.age);
+      this.BMRact = this.BMR * this.activity;
       this.BMR = this.BMR.toFixed();
+      this.BMRact = this.BMRact.toFixed();
     }else
     {
       this.BMR = ( 655 + (9.6 * this.weight) + (1.85 * this.length) - (4.7 * this.age)) * this.activity;
