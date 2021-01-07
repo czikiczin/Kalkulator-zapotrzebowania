@@ -1,0 +1,25 @@
+.exerciseBox{
+  width: 350px;
+  height: 245px;
+  background-color: linen;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.exerciseBoxText{
+  font-size: 40px;
+  color: black;
+  padding: 65px;
+}
+
+.exerciseBoxText2{
+  font-size: 40px;
+  color: black;
+  padding: 85px;
+}
+
+.btstrGrid{
+  width: max-content;
+  height: max-content;
+  margin-bottom: 30px;
+}
