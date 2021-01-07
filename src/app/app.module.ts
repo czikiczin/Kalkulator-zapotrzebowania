@@ -10,12 +10,22 @@ import {FormsModule} from '@angular/forms';
 import {RouterModule, Routes} from '@angular/router';
 import { DietsComponent } from './diets/diets.component';
 import { ExercisesComponent } from './exercises/exercises.component';
+import { ChestComponent } from './exercises/chest/chest.component';
+import { LegsComponent } from './exercises/legs/legs.component';
+import { BackComponent } from './exercises/back/back.component';
+import { ArmComponent } from './exercises/arm/arm.component';
+import { ShouldersComponent } from './exercises/shoulders/shoulders.component';
 
 const Routes: Routes = [
   {path: '', component: BMRcalcComponent},
   {path: 'bmi', component: BMIcalcComponent},
   {path: 'diets', component: DietsComponent},
   {path: 'exercises', component: ExercisesComponent},
+  {path: 'exercises/arms', component: ArmComponent},
+  {path: 'exercises/back', component: BackComponent},
+  {path: 'exercises/chest', component: ChestComponent},
+  {path: 'exercises/legs', component: LegsComponent},
+  {path: 'exercises/shoulders', component: ShouldersComponent},
 ];
 
 @NgModule({
@@ -25,7 +35,12 @@ const Routes: Routes = [
     BMRcalcComponent,
     BMIcalcComponent,
     DietsComponent,
-    ExercisesComponent
+    ExercisesComponent,
+    ChestComponent,
+    LegsComponent,
+    BackComponent,
+    ArmComponent,
+    ShouldersComponent
   ],
     imports: [
         BrowserModule,
