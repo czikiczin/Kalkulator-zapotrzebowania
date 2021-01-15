@@ -15,6 +15,8 @@ import { LegsComponent } from './exercises/legs/legs.component';
 import { BackComponent } from './exercises/back/back.component';
 import { ArmComponent } from './exercises/arm/arm.component';
 import { ShouldersComponent } from './exercises/shoulders/shoulders.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const Routes: Routes = [
   {path: '', component: BMRcalcComponent},
@@ -26,6 +28,8 @@ const Routes: Routes = [
   {path: 'exercises/chest', component: ChestComponent},
   {path: 'exercises/legs', component: LegsComponent},
   {path: 'exercises/shoulders', component: ShouldersComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent}
 ];
 
 @NgModule({
@@ -40,7 +44,9 @@ const Routes: Routes = [
     LegsComponent,
     BackComponent,
     ArmComponent,
-    ShouldersComponent
+    ShouldersComponent,
+    LoginComponent,
+    RegisterComponent
   ],
     imports: [
         BrowserModule,
