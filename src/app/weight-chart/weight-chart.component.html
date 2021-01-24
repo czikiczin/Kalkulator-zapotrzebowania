@@ -1,0 +1,25 @@
+<div class="row" style="margin-top: 20px; text-align: center">
+    <div class="col-xs-4 col-md-offset-4" >
+      <label class="labelInp" for="DateInput">Data</label>
+        <input id="DateInput" class="inputWeight form-control " style="margin-right: 10px; display: inline-block" type="date" [(ngModel)]="dateInp">
+      <label class="labelInp"  for="weightInput" style="margin-top: 10px">Waga</label>
+      <input class="inputWeight form-control" id="weightInput" type="number" style="text-align: center; display: inline-block" min="1" [(ngModel)]="weightInp" >
+    </div>
+    <div style="float: left">
+      <div class="col-xs-4">
+        <button class="SubmitBtn"  (click)="storeData()">Dodaj pomiar</button>
+      </div>
+    </div>
+  
+  </div>
+  <div class="row" style="margin-top: 30px">
+    <div style="display: block" >
+      <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType">
+      </canvas>
+    </div>
+  </div>
