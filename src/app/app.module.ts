@@ -17,6 +17,12 @@ import { ArmComponent } from './exercises/arm/arm.component';
 import { ShouldersComponent } from './exercises/shoulders/shoulders.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { WeightChartComponent } from './weight-chart/weight-chart.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ChartsModule} from 'ng2-charts';
+
+
 
 const Routes: Routes = [
   {path: '', component: BMRcalcComponent},
@@ -29,7 +35,8 @@ const Routes: Routes = [
   {path: 'exercises/legs', component: LegsComponent},
   {path: 'exercises/shoulders', component: ShouldersComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent}
+  {path: 'register', component: RegisterComponent},
+  {path: 'weight', component: WeightChartComponent}
 ];
 
 @NgModule({
@@ -46,15 +53,22 @@ const Routes: Routes = [
     ArmComponent,
     ShouldersComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    WeightChartComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule,
-        RouterModule.forRoot(Routes)
-    ],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    RouterModule.forRoot(Routes),
+    HttpClientModule,
+    ReactiveFormsModule,
+    ChartsModule
+
+
+  ],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
