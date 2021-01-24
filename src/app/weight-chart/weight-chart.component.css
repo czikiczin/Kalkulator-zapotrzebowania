@@ -1,0 +1,19 @@
+.inputWeight {
+    border-radius: 6px;
+    border: solid gray 3px;
+    font-size: 15px;
+  }
+  
+  .SubmitBtn {
+    margin-top: 30px;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    border: solid gray 3px;
+    height: 90px;
+  }
+  
+  .labelInp {
+    margin-right: 5px;
+    font-size: 15px;
+  }
