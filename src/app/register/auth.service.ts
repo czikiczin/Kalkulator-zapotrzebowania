@@ -3,18 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
-
-/*interface AuthResponseData {
-  kind: string;
-  idToken: string;
-  email: string;
-  refreshToken: string;
-  expiresIn: string;
-  localId: string;
-}*/
-
 @Injectable({ providedIn: 'root' })
 export class AuthService {
+
+  error = null;
 
   constructor(private http: HttpClient) {}
 
@@ -26,6 +18,18 @@ export class AuthService {
          password: password,
          returnSecureToken: true
        }
-    );
+    )
+     .pipe(catchError(errorRes => {
+       let errorMessage = 'Wystąpił nieznany błąd';
+       if(!errorRes.error || !errorRes.error.error){
+         return throwError(errorMessage);
+       }
+       switch (errorRes.error.error.message) {
+         case 'EMAIL_EXISTS' :
+         errorMessage = 'Użytkownik z podanym adresem e-mail juz istnieje';
+       }
+       return throwError(errorMessage);
+     }));
   }
 }
+
