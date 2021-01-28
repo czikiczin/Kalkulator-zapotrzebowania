@@ -20,7 +20,8 @@ import { RegisterComponent } from './register/register.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { WeightChartComponent } from './weight-chart/weight-chart.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ChartsModule} from 'ng2-charts';
+import {ChartsModule} from 'ng2-charts';
+import {LoadingSpinnerComponent} from './loading-spinner/loading-spinner.component';
 
 
 
@@ -54,7 +55,8 @@ const Routes: Routes = [
     ShouldersComponent,
     LoginComponent,
     RegisterComponent,
-    WeightChartComponent
+    WeightChartComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +66,7 @@ const Routes: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
     ChartsModule
+
 
 
   ],
