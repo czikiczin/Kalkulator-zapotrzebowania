@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Subject} from 'rxjs';
+import {BehaviorSubject, Subject} from 'rxjs';
 import {User} from './user.model';
 import {tap} from 'rxjs/operators';
 import {Router} from '@angular/router';
@@ -20,7 +20,7 @@ export interface LoginResponse {
 
 export class LoginService {
 
-  user = new Subject<User>();
+  user = new BehaviorSubject<User>(null);
   ID;
 
   constructor(private http: HttpClient, private router: Router ) {
@@ -44,13 +44,38 @@ export class LoginService {
          expirationDate,
        );
        this.user.next(user);
+       localStorage.setItem('userData', JSON.stringify(user));
      })
      );
 }
 
+ refreshLogin() {
+    const userData: {
+      email: string;
+      id: string;
+      _token: string;
+      _tokenExpirationDate: string;
+    } = JSON.parse(localStorage.getItem('userData'));
+    if (!userData){
+      return;
+    }
+    this.ID = userData.id;
+
+    const loadedUser = new User(
+      userData.email,
+      userData.id,
+      userData._token,
+      new Date(userData._tokenExpirationDate));
+
+
+    this.user.next(loadedUser);
+
+ }
+
 logout() {
     this.user.next(null);
     this.router.navigate(['/login']);
+    localStorage.removeItem('userData');
 }
 
 
