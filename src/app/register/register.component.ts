@@ -10,6 +10,8 @@ import {Router} from '@angular/router';
 })
 export class RegisterComponent {
 
+  error: string = null;
+
   constructor(private authService: AuthService, private router: Router) {}
 
   onSubmit(form: NgForm) {
@@ -21,10 +23,12 @@ export class RegisterComponent {
       console.log(resData);
       this.router.navigate(['/login']);
     },
-      error => {
-        console.log(error);
+      errorMessage => {
+        this.error = errorMessage;
+
       });
     form.reset();
   }
 
 }
+
