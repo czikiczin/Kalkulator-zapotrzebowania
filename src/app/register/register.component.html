@@ -1,5 +1,8 @@
-<div class="row" style="margin-top: 100px">
+<div class="row" style="margin-top: 80px">
   <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-xs-offset-0">
+    <div class="alert alert-danger" *ngIf="error">
+      <p>{{ error }}</p>
+    </div>
     <div class="loginBox">
       <h2 style="text-align: center;margin-bottom: 70px">Rejestracja do GymGuide</h2>
       <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
