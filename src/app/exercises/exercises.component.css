@@ -4,6 +4,10 @@
   background-color: linen;
   border-radius: 10px;
   text-align: center;
+  transition: transform .2s;
+}
+.exerciseBox:hover {
+  transform: scale(1.1);
 }
 
 .exerciseBoxText{
