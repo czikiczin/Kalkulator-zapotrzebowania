@@ -4,6 +4,7 @@ import {BehaviorSubject, Subject} from 'rxjs';
 import {User} from './user.model';
 import {tap} from 'rxjs/operators';
 import {Router} from '@angular/router';
+import set = Reflect.set;
 
 
 export interface LoginResponse {
@@ -22,6 +23,7 @@ export class LoginService {
 
   user = new BehaviorSubject<User>(null);
   ID;
+  private tokenExpTime: any;
 
   constructor(private http: HttpClient, private router: Router ) {
   }
@@ -44,6 +46,7 @@ export class LoginService {
          expirationDate,
        );
        this.user.next(user);
+       this.autoLogout(3600000);
        localStorage.setItem('userData', JSON.stringify(user));
      })
      );
@@ -69,13 +72,25 @@ export class LoginService {
 
 
     this.user.next(loadedUser);
-
+    this.autoLogout(3600000);
  }
 
 logout() {
     this.user.next(null);
     this.router.navigate(['/login']);
     localStorage.removeItem('userData');
+    if (this.tokenExpTime) {
+      clearTimeout(this.tokenExpTime);
+    }
+    this.tokenExpTime = null;
+}
+
+ autoLogout(expirationDuration: number) {
+
+    this.tokenExpTime = setTimeout(() => {
+      this.logout();
+    }, expirationDuration);
+
 }
 
 
