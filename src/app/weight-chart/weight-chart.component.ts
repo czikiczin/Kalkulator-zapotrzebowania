@@ -18,11 +18,14 @@ export class WeightChartComponent implements OnInit {
 
   dateInp;
   weightInp;
-  currentDate = formatDate(new Date(), 'yyyy-mm-dd', 'en');
+  currentDate: string;
+  ifWeightOk = true;
+  ifDateOk = true;
 
 
   constructor(private http: HttpClient, private user: LoginService) {
     this.fetchData();
+    this.currentDate = formatDate(new Date(), 'yyyy-MM-dd','en');
     console.log(this.currentDate);
   }
 
@@ -34,6 +37,28 @@ export class WeightChartComponent implements OnInit {
     const user = this.user.ID;
     const date = this.dateInp;
     const weight = this.weightInp;
+
+    if ( this.weightInp < 1 || this.dateInp < this.currentDate )
+    {
+      if ( this.weightInp < 1 )
+      {
+        this.weightInp = null;
+        this.ifWeightOk = false;
+      } else {
+        this.ifWeightOk = true;
+      }
+      if (this.dateInp < this.currentDate)
+      {
+        this.ifDateOk = false;
+        this.dateInp = null;
+      } else {
+        this.ifDateOk = true;
+      }
+      return;
+    }
+
+    this.ifWeightOk = true;
+    this.ifDateOk = true;
 
 
    this.http.post(`https://kalkulator-zapotrzebowania-default-rtdb.firebaseio.com/weightData/${user}.json`,
@@ -64,7 +89,7 @@ export class WeightChartComponent implements OnInit {
   fetchData() {
 
     const user = this.user.ID;
-    this.http.get(`https://kalkulator-zapotrzebowania-default-rtdb.firebaseio.com/weightData/${user}.json`)
+    this.http.post(`https://kalkulator-zapotrzebowania-default-rtdb.firebaseio.com/weightData/${user}.json`)
       .pipe(map((responseData: { [key: string]: WeightModel }) => {
         const postArray: WeightModel[] = [];
         for (const key in responseData) {
