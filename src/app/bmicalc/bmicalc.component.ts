@@ -12,12 +12,37 @@ export class BMIcalcComponent implements OnInit {
   length;
   BMI;
   BMItext: string;
+  ifWeightOk = true;
+  ifLenghtOk = true;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
   OnClick() {
+
+    if ( this.weight < 1 || this.length < 10 )
+    {
+      if ( this.weight < 1 )
+      {
+        this.ifWeightOk = false;
+        this.weight = null;
+      } else {
+        this.ifWeightOk = true;
+      }
+      if ( this.length < 10 )
+      {
+        this.ifLenghtOk = false;
+        this.length = null;
+      } else {
+        this.ifLenghtOk = true;
+      }
+      return;
+    }
+
+    this.ifWeightOk = true;
+    this.ifLenghtOk = true;
 
     /*this.activity = this.activity.toNumber(this.activity);*/
     this.length = this.length / 100;
