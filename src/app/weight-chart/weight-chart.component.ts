@@ -89,7 +89,7 @@ export class WeightChartComponent implements OnInit {
   fetchData() {
 
     const user = this.user.ID;
-    this.http.post(`https://kalkulator-zapotrzebowania-default-rtdb.firebaseio.com/weightData/${user}.json`)
+    this.http.get(`https://kalkulator-zapotrzebowania-default-rtdb.firebaseio.com/weightData/${user}.json`)
       .pipe(map((responseData: { [key: string]: WeightModel }) => {
         const postArray: WeightModel[] = [];
         for (const key in responseData) {
