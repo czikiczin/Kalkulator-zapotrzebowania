@@ -26,6 +26,7 @@ export class WeightChartComponent implements OnInit {
   constructor(private http: HttpClient, private user: LoginService) {
     this.fetchData();
     this.currentDate = formatDate(new Date(), 'yyyy-MM-dd','en');
+    this.dateInp = this.currentDate;
     console.log(this.currentDate);
   }
 
@@ -38,7 +39,7 @@ export class WeightChartComponent implements OnInit {
     const date = this.dateInp;
     const weight = this.weightInp;
 
-    if ( this.weightInp < 1 || this.dateInp < this.currentDate )
+    if ( this.weightInp < 1 || this.dateInp < this.currentDate || this.dateInp > this.currentDate )
     {
       if ( this.weightInp < 1 )
       {
@@ -48,6 +49,13 @@ export class WeightChartComponent implements OnInit {
         this.ifWeightOk = true;
       }
       if (this.dateInp < this.currentDate)
+      {
+        this.ifDateOk = false;
+        this.dateInp = null;
+      } else {
+        this.ifDateOk = true;
+      }
+      if (this.dateInp > this.currentDate)
       {
         this.ifDateOk = false;
         this.dateInp = null;
@@ -74,7 +82,6 @@ export class WeightChartComponent implements OnInit {
           this.fetchData();
         }
       );
-    this.dateInp = null;
     this.weightInp = null;
   }
   public barChartOptions = {
