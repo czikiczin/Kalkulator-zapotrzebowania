@@ -5,6 +5,7 @@
   border-radius: 10px;
   text-align: center;
   transition: transform .2s;
+  box-shadow: 1px 1px 20px black;
 }
 .exerciseBox:hover {
   transform: scale(1.1);
