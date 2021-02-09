@@ -1,5 +1,5 @@
 .dietBox {
-
+  max-width: 400px;
 }
 
 .dietTitle {
@@ -8,12 +8,16 @@
   min-height: 70px;
   display: block;
   position: relative;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px black;
 }
 
 .dietList {
-  margin-top: 8px;
+  margin-top: 12px;
   height: 450px;
   background-color: linen;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px black;
 }
 
 .rowInList {
@@ -54,3 +58,7 @@
   font-size: 30px;
   font-weight: bold;
 }
+
+
+
+
