@@ -16,7 +16,7 @@
     box-shadow: 1px 1px 20px black;
   text-align: center;
   margin-top: 50px;
-  background-color: linen;
+  background-color:  #99ccff;
 }
 
 .btnstyle {
@@ -24,19 +24,21 @@
   width: 300px;
   margin-bottom: 10px;
   margin-top: 15px;
-  background-color: linen;
-  color: black; box-shadow: 1px 1px 20px black;
+  background-color: #3399ff;
+  color: black;
+  box-shadow: 1px 1px 7px black;
+  border: 1px solid black;
   border-radius: 15px;
   height: 70px;
 }
 
 .rowINcalc {
-  background-color: linen;
+  background-color:  #99ccff;
   display: block;
   min-height: 40px;
   position: relative;
   margin: 7px 0;
-  box-shadow: 1px 1px 20px black;
+/*  box-shadow: 1px 1px 20px black;*/
   border-radius: 15px;
   padding: 10px;
 }
@@ -73,14 +75,14 @@
 }
 .right-input-style {
   border-radius: 10px;
-  box-shadow: 2px 2px 4px black;
+  box-shadow: 2px 2px 15px black;
   text-align: center;
-  border: 3px solid #dadada;
+  border: 1px solid black;
 display: inline-block;
   line-height: 30px;
   margin-left: 50px;
   font-size: 20px;
-  width: calc(100% - 200px);
+  width: calc(107% - 200px);
   height: 40px;
 }
 
@@ -106,3 +108,4 @@ display: inline-block;
   letter-spacing: 0.05em;
   margin: 0 10px;
 }
+
