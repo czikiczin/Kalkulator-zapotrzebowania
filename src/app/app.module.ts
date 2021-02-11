@@ -22,6 +22,7 @@ import { WeightChartComponent } from './weight-chart/weight-chart.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {ChartsModule} from 'ng2-charts';
 import {LoadingSpinnerComponent} from './loading-spinner/loading-spinner.component';
+import { SuplementsComponent } from './suplements/suplements.component';
 
 
 
@@ -37,7 +38,8 @@ const Routes: Routes = [
   {path: 'exercises/shoulders', component: ShouldersComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'weight', component: WeightChartComponent}
+  {path: 'weight', component: WeightChartComponent},
+  {path: 'supplements', component: SuplementsComponent}
 ];
 
 @NgModule({
@@ -56,7 +58,8 @@ const Routes: Routes = [
     LoginComponent,
     RegisterComponent,
     WeightChartComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    SuplementsComponent
   ],
   imports: [
     BrowserModule,
@@ -66,9 +69,6 @@ const Routes: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
     ChartsModule
-
-
-
   ],
   providers: [
   ],
