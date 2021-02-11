@@ -1,0 +1,41 @@
+.image {
+  display: inline-block;
+  width: 300px;
+  position: relative;
+/*  margin: 20px;*/
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px black;
+  transition: transform .2s;
+
+}
+.image:hover{
+  transform: scale(1.2);
+}
+.description {
+  display: inline-block;
+  width: calc(100% - 400px);
+/*  background-color: lightblue;*/
+  height: 260px;
+  padding: 5px;
+/*  position: absolute;*/
+  font-size: 18px;
+/*  font-family: "Book Antiqua";*/
+
+}
+
+
+.titlePhoto{
+  text-align: center;
+  font-size: 60px;
+  font-family: "Book Antiqua";
+
+}
+
+.titleStyle{
+  font-size: 35px;
+  margin-bottom: 60px;
+  font-family: "Book Antiqua";
+}
+.ranking:hover{
+  opacity: 10%;
+}
