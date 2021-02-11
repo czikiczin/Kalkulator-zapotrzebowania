@@ -2,7 +2,8 @@
   <div class="col-xs-12 col-md-6 col-md-offset-3">
     <div class="calculator"
     *ngIf="!view">
-      <h3 style="box-shadow: 1px 1px 20px black;padding: 20px;border-radius: 15px; background-color: linen"><strong>Oblicz dzienne zapotrzebowanie kaloryczne</strong></h3>
+      <h3 style="box-shadow: 1px 1px 20px black;padding: 20px;border-radius: 15px; background-color:  #99ccff"><strong>Oblicz dzienne zapotrzebowanie kaloryczne</strong></h3>
+      <div class="calculatorDesc" style="margin-top: 20px">
       <div class="rowINcalc" style="margin-top: 15px; ">
         <div class="left-input">
           <span class="input-label">Płeć:</span>
@@ -67,21 +68,20 @@
           Oblicz</button>
       </div>
     </div>
-
-    <div class="calculator"
+    </div>
+    <div class="calculatorDesc"
     *ngIf="view">
-      <div class="calculatorDesc">
       <h3 style="margin: 20px"><strong>Twoje podstawowa przemiana materii wynosi:</strong></h3>
       <span style="font-size: 40px; display: block; margin-bottom: 40px; margin-top: 50px">{{BMR}}  kcal</span>
       <h3 style="margin: 20px"><strong>Twoje zapotrzebowanie uwzględniając aktywność:</strong></h3>
       <span style="font-size: 40px; display: block; margin-bottom: 40px; margin-top: 50px">{{BMRact}}  kcal</span>
-    </div>
-    </div>
+
 
     <div *ngIf="view" class="btn-group">
-      <button class="btn btnstyle" style="margin-left: 140px"
+      <button class="btn btnstyle"
               (click)="onClear()">Oblicz Ponownie</button>
     </div>
+  </div>
   </div>
 </div>
 
