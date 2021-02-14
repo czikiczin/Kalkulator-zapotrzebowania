@@ -74,7 +74,7 @@
 .right-input-style {
   display: inline-block;
   border-radius: 10px;
-  box-shadow: 2px 2px 4px black;
+  box-shadow: 2px 2px 15px black;
   text-align: center;
   border: 1px solid black;
   line-height: 30px;
